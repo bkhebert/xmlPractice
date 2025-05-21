@@ -91,6 +91,7 @@ app.post('/soap', async (req, res) => {
     }
 
     const responseXml = builder.buildObject(responseObj);
+    console.log('responseXml', responseXml); 
     res.set('Content-Type', 'text/xml');
     res.send(responseXml);
   } catch (err) {
