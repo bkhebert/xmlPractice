@@ -39,7 +39,8 @@ app.post('/soap', async (req, res) => {
   try {
     const xml = req.body;
     const result = await parseStringPromise(xml);
-
+    console.log('xml', xml);
+    console.log('result', result);
     const accountNumber =
       result?.['soapenv:Envelope']?.['soapenv:Body']?.[0]?.['bank:GetAccountBalance']?.[0]?.['bank:accountNumber']?.[0];
 
